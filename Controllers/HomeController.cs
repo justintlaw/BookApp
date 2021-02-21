@@ -22,6 +22,7 @@ namespace BookApp.Controllers
 
         public IActionResult Index()
         {
+            // pass the data to the view
             return View(_repository.Books);
         }
 
