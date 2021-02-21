@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Book Store";
+}
+
+@model IQueryable<Book>
+
+<div class="container">
+    <h3 class="display-4">Available Books</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">BookId</th>
+                <th scope="col">Author</th>
+                <th scope="col">Publisher</th>
+                <th scope="col">ISBN</th>
+                <th scope="col">Classification</th>
+                <th scope="col">Category</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--Display every book in the database-->
+            @foreach (var item in Model)
+            {
+                bool hasMiddleName = !string.IsNullOrEmpty(item.AuthorMiddleInitial);
+                <tr>
+                    <th scope="row">@item.BookId</th>
+                    <td>@(item.AuthorFirstName + ' ' + (hasMiddleName ? item.AuthorMiddleInitial + ". " : "")  + item.AuthorLastName)</td>
+                    <td>@item.Publisher</td>
+                    <td>@item.ISBN</td>
+                    <td>@item.Classification</td>
+                    <td>@item.Category</td>
+                    <td>$@item.Price</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
