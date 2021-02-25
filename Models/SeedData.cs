@@ -34,7 +34,8 @@ namespace BookApp.Models
                         ISBN = "978-0451419439",
                         Classification = "Fiction",
                         Category = "Classic",
-                        Price = 9.95M
+                        Price = 9.95M,
+                        NumberOfPages = 1488
                     },
                     new Book
                     {
@@ -46,7 +47,8 @@ namespace BookApp.Models
                         ISBN = "978-0743270755",
                         Classification = "Non-Fiction",
                         Category = "Biography",
-                        Price = 14.58M
+                        Price = 14.58M,
+                        NumberOfPages = 944
                     },
                     new Book
                     {
@@ -57,7 +59,8 @@ namespace BookApp.Models
                         ISBN = "978-0553384611",
                         Classification = "Non-Fiction",
                         Category = "Biography",
-                        Price = 21.54M
+                        Price = 21.54M,
+                        NumberOfPages = 832
                     },
                     new Book
                     {
@@ -69,7 +72,44 @@ namespace BookApp.Models
                         ISBN = "978-0812981254",
                         Classification = "Non-Fiction",
                         Category = "Biography",
-                        Price = 11.61M
+                        Price = 11.61M,
+                        NumberOfPages = 864
+                    },
+                    new Book
+                    {
+                        Title = "1984",
+                        AuthorFirstName = "George",
+                        AuthorLastName = "Orwell",
+                        Publisher = "Books Inc.",
+                        ISBN = "675-2195468123",
+                        Classification = "Fiction",
+                        Category = "Classic",
+                        Price = 19.99M,
+                        NumberOfPages = 344
+                    },
+                    new Book
+                    {
+                        Title = "Animal Farm",
+                        AuthorFirstName = "George",
+                        AuthorLastName = "Orwell",
+                        Publisher = "Books Inc.",
+                        ISBN = "195-2125438123",
+                        Classification = "Fiction",
+                        Category = "Classic",
+                        Price = 19.99M,
+                        NumberOfPages = 343
+                    },
+                    new Book
+                    {
+                        Title = "Communist Manifesto",
+                        AuthorFirstName = "Karl",
+                        AuthorLastName = "Marx",
+                        Publisher = "Commie Publishing",
+                        ISBN = "975-2195368123",
+                        Classification = "Fiction",
+                        Category = "Garbage",
+                        Price = 25.49M,
+                        NumberOfPages = 53
                     }
                 );
 

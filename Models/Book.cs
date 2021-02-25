@@ -39,5 +39,8 @@ namespace BookApp.Models
 
         [Required]
         public decimal Price { get; set; }
+
+        [Required]
+        public int NumberOfPages { get; set; }
     }
 }
