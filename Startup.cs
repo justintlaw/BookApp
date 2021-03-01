@@ -54,12 +54,23 @@ namespace BookApp
 
             app.UseAuthorization();
 
+            // Add endpoints for categories and page numbers
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    // adjust the routing to show page number for each Book, ie. /P#
-                    "pagination",
-                    "P{page}",
+                endpoints.MapControllerRoute("catpage",
+                    "Books/{category}/{page:int}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("page",
+                    "Books/{page:int}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("category",
+                    "Books/{category}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("pagination",
+                    "Books/{page}",
                     new { Controller = "Home", action = "Index" });
 
                 endpoints.MapDefaultControllerRoute();

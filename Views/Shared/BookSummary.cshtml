@@ -1,0 +1,59 @@
+﻿@model Book 
+
+@{
+    ViewData["dataTarget"] = String.Format("#bookModal{0}", Model.BookId);
+    ViewData["modalId"] = String.Format("bookModal{0}", Model.BookId);
+    bool hasMiddleName = !string.IsNullOrEmpty(Model.AuthorMiddleInitial);
+}
+
+<tr>
+    <th scope="row">@Model.BookId</th>
+    <td>@Model.Title</td>
+    <td>@(Model.AuthorFirstName + ' ' + (hasMiddleName ? Model.AuthorMiddleInitial + ". " : "") + Model.AuthorLastName)</td>
+    <td>@Model.Publisher</td>
+    <td>@Model.ISBN</td>
+    <td>@Model.Classification</td>
+    <td>@Model.Category</td>
+    <td>@Model.NumberOfPages</td>
+    <td>$@Model.Price</td>
+    <td>
+        @if (Model.Price < 20)
+        {
+            <h5><span class="badge badge-danger">Low Price!</span></h5>
+        }
+    </td>
+    <td>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=@ViewData["dataTarget"]>
+            More Info
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id=@ViewData["modalId"] tabindex="-1" role="dialog" aria-labelledby="bookModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="bookModalLabel">@Model.Title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">BookId: @Model.BookId</li>
+                            <li class="list-group-item">Title: @Model.Title</li>
+                            <li class="list-group-item">Author: @(Model.AuthorFirstName + ' ' + (hasMiddleName ? Model.AuthorMiddleInitial + ". " : "")  + Model.AuthorLastName)</li>
+                            <li class="list-group-item">Publisher: @Model.Publisher</li>
+                            <li class="list-group-item">ISBN: @Model.ISBN</li>
+                            <li class="list-group-item">Classification: @Model.Classification</li>
+                            <li class="list-group-item">Category: @Model.Category</li>
+                            <li class="list-group-item">Number of Pages: @Model.NumberOfPages</li>
+                            <li class="list-group-item">Price: $@Model.Price</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </td>
+</tr>

@@ -23,12 +23,13 @@ namespace BookApp.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index(int page = 1)
+        public IActionResult Index(string category, int page = 1)
         {
             // return a view with a list of books and paging info
             return View(new BookList
             {
                 Books = _repository.Books
+                    .Where(p => category == null || p.Category == category)
                     .OrderBy(p => p.BookId)
                     .Skip((page - 1) * PageSize)
                     .Take(PageSize),
@@ -36,8 +37,10 @@ namespace BookApp.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalNumItems = _repository.Books.Count()
-                }
+                    TotalNumItems = category == null ? _repository.Books.Count() :
+                        _repository.Books.Where(item => item.Category == category).Count()
+                },
+                Category = category
             });
         }
 
