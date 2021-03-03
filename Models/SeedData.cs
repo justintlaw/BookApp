@@ -77,6 +77,78 @@ namespace BookApp.Models
                     },
                     new Book
                     {
+                        Title = "Unbroken",
+                        AuthorFirstName = "Laura",
+                        AuthorLastName = "Hillenbrand",
+                        Publisher = "Random House",
+                        ISBN = "978-0812974492",
+                        Classification = "Non-Fiction",
+                        Category = "Historical",
+                        Price = 13.33M,
+                        NumberOfPages = 528
+                    },
+                    new Book
+                    {
+                        Title = "The Great Train Robbery",
+                        AuthorFirstName = "Michael",
+                        AuthorLastName = "Crichton",
+                        Publisher = "Vintage",
+                        ISBN = "978-0804171281",
+                        Classification = "Fiction",
+                        Category = "Historical Fiction",
+                        Price = 15.95M,
+                        NumberOfPages = 288
+                    },
+                    new Book
+                    {
+                        Title = "Deep Work",
+                        AuthorFirstName = "Cal",
+                        AuthorLastName = "Newport",
+                        Publisher = "Grand Central Publishing",
+                        ISBN = "978-1455586691",
+                        Classification = "Non-Fiction",
+                        Category = "Self-help",
+                        Price = 14.99M,
+                        NumberOfPages = 304
+                    },
+                    new Book
+                    {
+                        Title = "It's Your Ship",
+                        AuthorFirstName = "Michael",
+                        AuthorLastName = "Abrashoff",
+                        Publisher = "Grand Central Publishing",
+                        ISBN = "978-1455523023",
+                        Classification = "Non-Fiction",
+                        Category = "Self-help",
+                        Price = 21.66M,
+                        NumberOfPages = 240
+                    },
+                    new Book
+                    {
+                        Title = "The Virgin Way",
+                        AuthorFirstName = "Richard",
+                        AuthorLastName = "Branson",
+                        Publisher = "Portfolio",
+                        ISBN = "978-1591847984",
+                        Classification = "Non-Fiction",
+                        Category = "Business",
+                        Price = 29.16M,
+                        NumberOfPages = 400
+                    },
+                    new Book
+                    {
+                        Title = "Sycamore Row",
+                        AuthorFirstName = "John",
+                        AuthorLastName = "Grisham",
+                        Publisher = "Bantam",
+                        ISBN = "978-0553393613",
+                        Classification = "Fiction",
+                        Category = "Thrillers",
+                        Price = 15.03M,
+                        NumberOfPages = 642
+                    },
+                    new Book
+                    {
                         Title = "1984",
                         AuthorFirstName = "George",
                         AuthorLastName = "Orwell",
