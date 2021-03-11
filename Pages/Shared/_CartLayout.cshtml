@@ -6,7 +6,6 @@
     <title>@ViewData["Title"] - BookApp</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
@@ -21,12 +20,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <vc:cart-summary />
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
@@ -38,30 +32,14 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a asp-action="Index">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Books</li>
+                    <li class="breadcrumb-item active" aria-current="page">Cart</li>
                 </ol>
             </nav>
         </div>
     </header>
+
     <div class="container">
-        <div class="row">
-            <div class="col-2">
-                <!--Placeholder so that the table title aligns with the table-->
-            </div>
-
-            <div class="col-10">
-                <h3 class="display-4">Available Books</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-2">
-                <vc:navigation-menu />
-            </div>
-
-            <div class="col-10">
-                @RenderBody()
-            </div>
-        </div>
+        @RenderBody()
     </div>
 
     <footer class="border-top footer text-muted">

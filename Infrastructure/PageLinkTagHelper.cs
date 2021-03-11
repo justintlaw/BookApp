@@ -47,7 +47,7 @@ namespace BookApp.Infrastructure
                 TagBuilder tag = new TagBuilder("a");
 
                 // set the page in PageUrlValues
-                PageUrlValues["page"] = i;
+                PageUrlValues["pageNum"] = i;
 
                 // update the page in the tags attributes
                 tag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues);
