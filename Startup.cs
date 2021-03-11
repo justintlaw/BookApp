@@ -40,6 +40,7 @@ namespace BookApp
             services.AddDistributedMemoryCache();
             services.AddSession();
 
+            // Add the session cart
             services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }

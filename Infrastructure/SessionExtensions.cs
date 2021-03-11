@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace BookApp.Infrastructure
 {
+    // Class to set and get data for a session
     public static class SessionExtensions
     {
         public static void SetJson (this ISession session, string key, object value)

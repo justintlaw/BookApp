@@ -7,6 +7,7 @@ namespace BookApp.Models
 {
     public class SessionCart : Cart
     {
+        // Every session cart needs a session
         public static Cart GetCart(IServiceProvider services)
         {
             ISession session = services.GetRequiredService<IHttpContextAccessor>()?

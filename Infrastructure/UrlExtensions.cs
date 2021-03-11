@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookApp.Infrastructure
 {
+    // Helper function to get the path for return urls
     public static  class UrlExtensions
     {
         public static string PathAndQuery(this HttpRequest request) =>

@@ -25,12 +25,14 @@ namespace BookApp.Pages
 
         public string ReturnUrl { get; set; }
 
+        // Function for getting a cart
         public void OnGet(string returnUrl)
         {
             ReturnUrl = returnUrl ?? "/";
             Cart = HttpContext.Session.GetJson<Cart>("Cart") ?? new Cart();
         }
 
+        // Function for adding a book to a cart
         public IActionResult OnPost(long bookId, string returnUrl)
         {
             Book book = repository.Books.FirstOrDefault(elem => elem.BookId == bookId);
@@ -43,6 +45,8 @@ namespace BookApp.Pages
 
             return RedirectToPage(new { returnUrl = returnUrl });
         }
+
+        // Function for deleting a line item
 
         public IActionResult OnPostDelete(long bookId, string returnUrl)
         {
