@@ -10,6 +10,7 @@ namespace BookApp.Models
 {
     public class Cart
     {
+        // A list for each line in the cart
         public List<CartLine> Lines { get; set; } = new List<CartLine>();
 
         public virtual void AddItem(Book b, int qty)
@@ -39,6 +40,7 @@ namespace BookApp.Models
 
         public decimal ComputeTotalSum() => Lines.Sum(item => item.Book.Price * item.Quantity);
 
+        // Line item information
         public class CartLine
         {
             public int CartLineId { get; set; }
